@@ -9,7 +9,7 @@ try:
     import kagglehub
     from kagglehub import KaggleDatasetAdapter
 except ImportError:
-    print("🔄 Instalando kagglehub automaticamente...")
+    print("Instalando kagglehub automaticamente...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", "kagglehub[pandas-datasets]", "pyarrow"])
     import kagglehub
     from kagglehub import KaggleDatasetAdapter
@@ -26,4 +26,4 @@ data_path.mkdir(parents=True, exist_ok=True)
 df.to_parquet(data_path / "dados_banco.parquet", index=False)
 df.to_csv(data_path / "dados_banco.csv", index=False)
 
-print("✅ Dataset salvo em:", data_path / "dados_banco.parquet")
+print("Dataset salvo em:", data_path / "dados_banco.parquet")
